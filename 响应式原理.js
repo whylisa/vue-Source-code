@@ -36,6 +36,7 @@ let app = new Vue({
 	}
 })
 
+
 _proxy.call(this,options.data)
 
 function _proxy(data) {
