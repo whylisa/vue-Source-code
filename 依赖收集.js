@@ -35,3 +35,40 @@ class Watcher {
 		this.cb.call(this.vm)
 	}
 }
+
+class Vue {
+	constructor(options) {
+		this._data = options.data;
+		observe(this._data,options.render)
+		let watcher = new Watcher(this, )
+	}
+}
+function defineReactive (obj,key,val,cb) {
+	const dep = new Dep()
+	Object.defineProperty(obj,key,{
+		enumerable:true,
+		configurable: true,
+		get : () => {
+			if(Dep.target) {
+				dep.addSub(Dep.target)
+			},
+			set: newVal => {
+				dep.notify
+			}
+		}
+	})
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
